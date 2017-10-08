@@ -1,0 +1,52 @@
+#mainwrapper {
+    background-color: darkviolet;
+    width: 100%;
+    background-image: url("images/mexfoodsmall.png");
+}
+
+#logo {
+    width: 640px;
+}
+
+#main {
+    background-color: #F6E9FD;
+    width: 950px;
+    margin: 0 auto;
+    padding: 20px;
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 15px;
+    border-right-color: indigo;
+    border-left-color: indigo;
+}
+
+#tacofiedSpan {
+    font-weight:bold;
+    font-size: 36pt;
+    color: steelblue;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#outputDiv {
+    min-height: 200px;
+}
+
+#description {
+    font-size: 9pt;
+}
+
+#yourname {
+    text-align: center;
+    font-size: 24pt;
+}
+
+.excited {
+    color:firebrick;
+    font-size: 11pt;
+}
+
+#mainheadline {
+    font-size: 40pt;
+}

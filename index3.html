@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<script src="absurdish.com/jquery/jquery.min.js"></script>
+<script src="absurdish.com/jquery/jquery-ui/jquery-ui.js"></script>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Tacofied</title>
+    <link rel="stylesheet" href="absurdish.com/jquery/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+    <center>
+        <div id="mainwrapper">
+            <div id="main" class="ui-widget">
+                <div id="header" id="ui-widget-content">
+<!---
+                    <h1 id="mainheadline" id="ui-widget-header">GET TACOFIED!!!</h1>
+--->
+<img src="images/tacofied_logo.png" id="logo" >
+                    <div id="description">
+
+                        Below, enter your name
+                        or the name of your mom
+                        or your pet
+                        or one of the kids from Charles in Charge
+                        and
+                        <span class="excited"> TACOFY </span>
+                        it to generate a food item which sounds
+                        like something sold by your favorite
+                        pseudo-Mexican food joint!
+                                
+                    </div>
+                    
+                </div>
+                <div id="content">
+                    <div id="inputDiv">
+                        <p><input type="text" id="yourname" >
+                        <p><span id="buttonTacofy">TACOFY!!</span></p> 
+                    </div>
+                    <div id="outputDiv">
+                        <span id="tacofiedSpan">PREPARE FOR TACOFICATION...</span>
+                        
+                    </div>
+                </div>
+                <div id="footer">
+                    
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
+<script type="text/javascript" charset="utf-8">
+    var cgidir = "absurdish.com/cgi-bin/tacofied/";
+    $(document).ready(function(){
+            $("#buttonTacofy").text("TACOFY!!")
+            .button()
+                .click(function(){
+                    tacofyMe();
+                });
+        $("#yourname").keypress(function(e) {
+            if(e.which == 13) {
+                tacofyMe();
+            }
+        });
+    });
+
+    function tacofyMe(){
+        $("#tacofiedSpan").toggle("fade",500,function(){
+            $("#tacofiedSpan").load(
+                cgidir + "livemas.py",
+                {
+                    "yourname" : $("#yourname").val()
+                },
+                function(){
+                    $("#tacofiedSpan").toggle("fade",500);
+                }
+            );
+        });
+    }
+</script>
+
+
+
+
